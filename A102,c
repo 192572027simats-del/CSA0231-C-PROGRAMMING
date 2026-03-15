@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int num, first, last, digits = 0, temp, middle, power = 1, result;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    temp = num;
+
+    // Find last digit
+    last = num % 10;
+
+    // Count digits
+    while(temp > 0) {
+        temp = temp / 10;
+        digits++;
+    }
+
+    // Calculate 10^(digits-1)
+    for(int i = 1; i < digits; i++) {
+        power = power * 10;
+    }
+
+    // Find first digit
+    first = num / power;
+
+    // Get middle digits
+    middle = (num % power) / 10;
+
+    // Form new number
+    result = last * power + middle * 10 + first;
+
+    printf("Number after swapping first and last digit: %d\n", result);
+
+    return 0;
+}
