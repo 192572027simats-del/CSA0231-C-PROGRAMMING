@@ -1,27 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int M, N, i;
+    int totalUsers, staffUsers, nonTeaching, studentUsers;
 
-    printf("Enter value of M: ");
-    scanf("%d", &M);
+    printf("Enter Total Users: ");
+    scanf("%d", &totalUsers);
 
-    printf("Enter value of N: ");
-    scanf("%d", &N);
+    printf("Enter Staff Users: ");
+    scanf("%d", &staffUsers);
 
-    printf("All Odd Numbers = ");
-    for(i = M + 1; i < N; i++) {
-        if(i % 2 != 0) {
-            printf("%d ", i);
-        }
-    }
+    nonTeaching = staffUsers / 3;
 
-    printf("\nAll Even Numbers = ");
-    for(i = M + 1; i < N; i++) {
-        if(i % 2 == 0) {
-            printf("%d ", i);
-        }
-    }
+    studentUsers = totalUsers - (staffUsers + nonTeaching);
+
+    printf("Student Users: %d\n", studentUsers);
 
     return 0;
 }
